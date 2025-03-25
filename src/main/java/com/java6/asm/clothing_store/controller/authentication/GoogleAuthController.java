@@ -27,6 +27,6 @@ public class GoogleAuthController {
     @GetMapping("/success")
     public void googleLoginSuccess(@AuthenticationPrincipal OAuth2User oauth2User, HttpServletResponse response) throws IOException {
         oAuthGoogleUserService.authenticateAndGenerateTokens(oauth2User, null, response);
-        response.sendRedirect("http://localhost:5173/callback"); // Không gửi accessToken qua query
+        response.sendRedirect("https://clothing-store-fe-test.vercel.app/callback"); // Không gửi accessToken qua query
     }
 }
